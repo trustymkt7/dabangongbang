@@ -1,5 +1,5 @@
-// 기술사 답안공방 오프라인 캐시 — 버전 20261112-0838
-const CACHE = 'pe-20261112-0838';
+// 기술사 답안공방 오프라인 캐시 — 버전 20261112-0840
+const CACHE = 'pe-20261112-0840';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE))); });
 self.addEventListener('message', e => { if (e.data === 'skip') self.skipWaiting(); });
