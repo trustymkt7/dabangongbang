@@ -1,12 +1,12 @@
-// 기술사 답안공방 오프라인 캐시 — 버전 20261118-1151
-const CACHE = 'pe-20261118-1151';
+// 기술사 답안공방 오프라인 캐시 — 버전 20261118-1156
+const CACHE = 'pe-20261118-1156';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 // 설치할 때 CDN 이 아직 옛 파일을 줄 수 있어(배포 직후) 주소에 버전을 붙여 새로 받고, index 는 버전 글자를 확인한 뒤에만 저장
 async function grab(c, u) {
   for (let i = 0; i < 8; i++) {
-    const r = await fetch(u + '?v=20261118-1151&t=' + Date.now(), { cache: 'reload' });
+    const r = await fetch(u + '?v=20261118-1156&t=' + Date.now(), { cache: 'reload' });
     if (r.ok) {
-      if (u === './' || u === './index.html') { const t = await r.clone().text(); if (!t.includes('20261118-1151')) { await new Promise(s => setTimeout(s, 8000)); continue; } }
+      if (u === './' || u === './index.html') { const t = await r.clone().text(); if (!t.includes('20261118-1156')) { await new Promise(s => setTimeout(s, 8000)); continue; } }
       await c.put(u, r); return;
     }
   }
